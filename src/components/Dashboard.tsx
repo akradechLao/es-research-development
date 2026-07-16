@@ -10,6 +10,7 @@ import ThresholdSettings from './ThresholdSettings';
 import AlertSettings from './AlertSettings';
 import ExportData from './ExportData';
 import ComparisonView from './ComparisonView';
+import StationComparisonChart from './StationComparisonChart';
 
 const Dashboard: React.FC = () => {
   const {
@@ -224,6 +225,11 @@ const Dashboard: React.FC = () => {
             timeRange={timeRange}
             onTimeRangeChange={setTimeRange}
           />
+        </div>
+
+        {/* Station Comparison Chart */}
+        <div className="mb-8">
+          <StationComparisonChart />
         </div>
 
         {/* Bottom Section */}
