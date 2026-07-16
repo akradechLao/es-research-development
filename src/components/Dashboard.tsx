@@ -11,6 +11,8 @@ import AlertSettings from './AlertSettings';
 import ExportData from './ExportData';
 import ComparisonView from './ComparisonView';
 import StationComparisonChart from './StationComparisonChart';
+import StationMap from './StationMap';
+import StationGallery from './StationGallery';
 
 const Dashboard: React.FC = () => {
   const {
@@ -230,6 +232,12 @@ const Dashboard: React.FC = () => {
         {/* Station Comparison Chart */}
         <div className="mb-8">
           <StationComparisonChart />
+        </div>
+
+        {/* Station Map and Gallery */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <StationMap />
+          <StationGallery />
         </div>
 
         {/* Bottom Section */}

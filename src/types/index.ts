@@ -15,6 +15,17 @@ export interface Station {
   longitude: number;
   isActive: boolean;
   lastUpdate: Date;
+  description?: string;
+  images?: string[];
+  cameras?: CameraInfo[];
+}
+
+export interface CameraInfo {
+  id: string;
+  name: string;
+  url: string;
+  isOnline: boolean;
+  lastCapture?: Date;
 }
 
 export interface Threshold {
