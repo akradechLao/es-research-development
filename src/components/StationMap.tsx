@@ -4,10 +4,11 @@ import { stations } from '../data/stations';
 import { useApp } from '../context/AppContext';
 import 'leaflet/dist/leaflet.css';
 
-const createCustomIcon = (isActive: boolean) => {
-  const color = isActive ? '#22c55e' : '#ef4444';
+const markerColors = ['#3b82f6', '#f97316', '#22c55e', '#ef4444', '#8b5cf6'];
+
+const createCustomIcon = (color: string) => {
   const svgIcon = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${color}" width="32" height="32">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${color}" width="36" height="36">
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
     </svg>
   `;
@@ -15,9 +16,9 @@ const createCustomIcon = (isActive: boolean) => {
   return L.divIcon({
     html: svgIcon,
     className: 'custom-marker',
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32],
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+    popupAnchor: [0, -36],
   });
 };
 
@@ -47,11 +48,11 @@ const StationMap: React.FC = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           
-          {stations.map((station) => (
+          {stations.map((station, index) => (
             <Marker
               key={station.id}
               position={[station.latitude, station.longitude]}
-              icon={createCustomIcon(station.isActive)}
+              icon={createCustomIcon(markerColors[index % markerColors.length])}
               eventHandlers={{
                 click: () => {
                   setSelectedStation(station.id);
@@ -90,7 +91,7 @@ const StationMap: React.FC = () => {
       
       <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
         <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
-          {stations.map((station) => (
+          {stations.map((station, index) => (
             <div
               key={station.id}
               className={`flex items-center gap-2 cursor-pointer hover:text-primary-600 transition-colors ${
@@ -99,9 +100,8 @@ const StationMap: React.FC = () => {
               onClick={() => setSelectedStation(station.id)}
             >
               <div
-                className={`w-3 h-3 rounded-full ${
-                  station.isActive ? 'bg-green-500' : 'bg-red-500'
-                }`}
+                className="w-3 h-3 rounded-full"
+                style={{ backgroundColor: markerColors[index % markerColors.length] }}
               ></div>
               <span>{station.name}</span>
             </div>
