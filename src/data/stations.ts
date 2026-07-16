@@ -10,6 +10,15 @@ export const stations: Station[] = [
     isActive: true,
     lastUpdate: new Date(),
   },
+  {
+    id: 'station-002',
+    name: 'สถานีวิจัยสระแก้ว',
+    location: 'สระแก้ว',
+    latitude: 13.8144,
+    longitude: 102.1884,
+    isActive: true,
+    lastUpdate: new Date(),
+  },
 ];
 
 export const getStationById = (id: string): Station | undefined => {
