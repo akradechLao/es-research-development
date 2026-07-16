@@ -160,7 +160,7 @@ const StationGallery: React.FC = () => {
                   <img
                     src={image}
                     alt={`${station.name} - รูปที่ ${index + 1}`}
-                    className="w-full h-auto max-h-96 object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-auto max-h-64 object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                 </div>
