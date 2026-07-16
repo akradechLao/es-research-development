@@ -11,13 +11,13 @@ export const stations: Station[] = [
     lastUpdate: new Date(),
     description: 'สถานีวิจัยหลัก ตั้งอยู่ในเขตกรุงเทพมหานคร ทำการตรวจวัดสภาพอากาศและเก็บข้อมูลอย่างต่อเนื่อง ติดตั้งเครื่องมือวัดอุณหภูมิ ความชื้น และปริมาณน้ำฝนอัตโนมัติ',
     images: [
-      '/images/stations/bangkok-station.png',
+      '/es-research-development/images/stations/bangkok-station.png',
     ],
     cameras: [
       {
         id: 'cam-001-01',
         name: 'กล้องหน้าสถานี',
-        url: '/images/stations/bangkok-station.png',
+        url: '/es-research-development/images/stations/bangkok-station.png',
         isOnline: true,
         lastCapture: new Date(),
       },
@@ -33,13 +33,13 @@ export const stations: Station[] = [
     lastUpdate: new Date(),
     description: 'สถานีวิจัยประจำจังหวัดสระแก้ว ตั้งอยู่ใกล้ชายแดนไทย-กัมพูชา ทำการ monitoring สภาพอากาศในพื้นที่ภาคตะวันออก',
     images: [
-      '/images/stations/sakaeo-station.png',
+      '/es-research-development/images/stations/sakaeo-station.png',
     ],
     cameras: [
       {
         id: 'cam-002-01',
         name: 'กล้องจุดตรวจวัด',
-        url: '/images/stations/sakaeo-station.png',
+        url: '/es-research-development/images/stations/sakaeo-station.png',
         isOnline: true,
         lastCapture: new Date(),
       },
